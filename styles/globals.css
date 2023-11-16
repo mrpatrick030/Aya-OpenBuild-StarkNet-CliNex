@@ -2,26 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+body{background:#000; color:#eee}
+.headeranchors{transition:1s ease-in-out;}
+.headeranchors:hover{color:#fff}
+.headeranchorsinnerspan{transition:1s ease-in-out;}
+.headeranchorsinnerspan:hover{transform: scale3d(1.2, 1.2, 1.2);}
+#headerbutton:hover{color:#ccc}
+#headerbutton{transform:scale3d(1.4,1.4,1.4);transition:1s ease-in-out;}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
+.signupbutton{transition: 1s ease-in-out;}
+.signupbutton:hover{background-color: #22a;}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+.custom-loader {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   background-color: rgba(0,0,0,0.6); /* Semi-transparent background */
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   z-index: 9999; /* Ensure the loader appears on top of everything */
+ }
+ 
+ .loader-spinner {
+   border: 4px solid rgba(200, 0, 0, 0.8);
+   border-top: 4px solid #ffffff;
+   border-radius: 50%;
+   width: 30px;
+   height: 30px;
+   animation: spin 1s linear infinite;
+ }
+ 
+ @keyframes spin {
+   0% { transform: rotate(0deg); }
+   100% { transform: rotate(360deg); }
+ }
+
+
+ @media screen and (max-width:620px) {
+  .homesecondlogo{visibility: hidden;}
+ }
+
+ 
+ 
