@@ -9,11 +9,11 @@ export default function ProjectHeader(){
   };
 
     return (
-      <nav className='flex items-center flex-wrap px-[5%]' style={{background:"rgba(0,0,0,0.8)"}}>
+      <nav className='flex items-center flex-wrap px-[5%] navbar' style={{background:"rgba(0,0,0,0.8)"}}>
       <div id="logo">
         <Link href='/' className='inline-flex items-center'>
         <span className="text-[160%] text-[#fff] font-[600]">
-            <img src="" width="180" />
+            <img src="images/thelogo.png" width="120" className="cursor-pointer"/>
           </span>
           <span className='text-xl text-white font-bold uppercase tracking-wide text-[90%]'></span>
         </Link>
@@ -47,20 +47,26 @@ export default function ProjectHeader(){
         style={{fontSize:"110%", transition:"2s ease-in-out"}}>
            
             <span style={{transition:"1s ease-in-out"}} className="rounded-md">
-            <Link href='/#xnationvideos' onClick={handleClick} className='lg:inline-flex lg:w-auto w-full px-4 rounded-full text-[#eee] items-center justify-center headeranchors'>
-               <span className="headeranchorsinnerspan">Get Xclusive</span>
+            <Link href='/' onClick={handleClick} className='lg:inline-flex lg:w-auto w-full px-4 rounded-full text-[#eee] items-center justify-center headeranchors'>
+               <span className="headeranchorsinnerspan">Become a Member</span>
             </Link>
           </span>
 
           <span style={{transition:"1s ease-in-out"}} className="rounded-md">
             <Link href='/signin' onClick={handleClick} className='lg:inline-flex lg:w-auto w-full px-4 rounded-full text-[#eee] items-center justify-center headeranchors'>
-              <span className="headeranchorsinnerspan">Sign in</span>
+              <span className="headeranchorsinnerspan">Governance</span>
             </Link>
             </span>
 
             <span style={{transition:"1s ease-in-out"}} className="rounded-md">
             <Link href='/signup' onClick={handleClick} className='lg:inline-flex lg:w-auto w-full px-4 rounded-full text-[#eee] items-center justify-center headeranchors'>
-              <span className="headeranchorsinnerspan">Sign up</span>
+              <span className="headeranchorsinnerspan">Climate Data</span>
+            </Link>
+            </span>
+
+            <span style={{transition:"1s ease-in-out"}} className="rounded-md">
+            <Link href='/signup' onClick={handleClick} className='lg:inline-flex lg:w-auto w-full px-4 rounded-full text-[#eee] items-center justify-center headeranchors'>
+              <span className="headeranchorsinnerspan">Admin Area</span>
             </Link>
             </span>
 

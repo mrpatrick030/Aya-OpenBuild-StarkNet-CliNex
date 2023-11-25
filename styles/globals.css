@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-body{background:#000; color:#eee}
+body{background:#000; color:#fff}
 .headeranchors{transition:1s ease-in-out;}
 .headeranchors:hover{color:#fff}
 .headeranchorsinnerspan{transition:1s ease-in-out;}
@@ -10,8 +10,6 @@ body{background:#000; color:#eee}
 #headerbutton:hover{color:#ccc}
 #headerbutton{transform:scale3d(1.4,1.4,1.4);transition:1s ease-in-out;}
 
-.signupbutton{transition: 1s ease-in-out;}
-.signupbutton:hover{background-color: #22a;}
 
 .custom-loader {
    display: flex;
@@ -41,9 +39,32 @@ body{background:#000; color:#eee}
  }
 
 
- @media screen and (max-width:620px) {
-  .homesecondlogo{visibility: hidden;}
+ @media screen and (min-width:1007px) {
+  .navbar{visibility: hidden;}
  }
 
+ @media screen and (max-width:1007px) {
+  .navbar{visibility: visible;}
+ }
+  
+ @media screen and (min-width:1007px) {
+ .maindiv{background-image: url("/images/bg1.jpg"); background-size: 100%; background-attachment: fixed;}
+ }
+
+ @media screen and (max-width:620px) {
+  .maindiv{background-image: url("/images/bg1.jpg"); background-attachment: fixed;}
+  }
+
+  @media screen and (max-width:1007px) {
+    .maindiv{background-image: url("/images/bg1.jpg"); background-attachment: fixed;}
+    }
+
+ @media screen and (max-width:1007px) {
+  .secondmenu{display: none;}
+ }
+
+ .secondmenuspan{transition: 0.3s ease-in-out;}
+ .secondmenuspan:hover{border-bottom: 3px solid #090;}
+  
  
  
