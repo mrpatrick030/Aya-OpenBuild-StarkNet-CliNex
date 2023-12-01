@@ -3,12 +3,12 @@
 @tailwind utilities;
 
 body{background:#000; color:#fff}
-.headeranchors{transition:1s ease-in-out;}
+.headeranchors{transition:0.5s ease-in-out;}
 .headeranchors:hover{color:#fff}
-.headeranchorsinnerspan{transition:1s ease-in-out;}
+.headeranchorsinnerspan{transition:0.5s ease-in-out;}
 .headeranchorsinnerspan:hover{transform: scale3d(1.2, 1.2, 1.2);}
 #headerbutton:hover{color:#ccc}
-#headerbutton{transform:scale3d(1.4,1.4,1.4);transition:1s ease-in-out;}
+#headerbutton{transform:scale3d(1.4,1.4,1.4);transition:0.5s ease-in-out;}
 
 
 .custom-loader {
@@ -25,7 +25,7 @@ body{background:#000; color:#fff}
  }
  
  .loader-spinner {
-   border: 4px solid rgba(200, 0, 0, 0.8);
+   border: 4px solid #090;
    border-top: 4px solid #ffffff;
    border-radius: 50%;
    width: 30px;
@@ -64,7 +64,79 @@ body{background:#000; color:#fff}
  }
 
  .secondmenuspan{transition: 0.3s ease-in-out;}
- .secondmenuspan:hover{border-bottom: 3px solid #090;}
+ .secondmenuspan:hover{border-bottom: 3px solid #090; color: #070;}
+
+ .firstsectionbuttons{transition: 0.5s ease-in-out;}
+ .firstsectionbuttons:hover{transform: scale3d(1.05, 1.05,1.05); background-color: #060;}
+  .actionbutton{transition: 0.5s ease-in-out;}
+  .actionbutton:hover{background-color: #090;}
+  .governancemenubuttons{transition: 0.3s ease-in-out;}
+  .governancemenubuttons:hover{color: #073;}
+  @media screen and (min-width:620px) {
+    .maindivforbuytoken{background-position-x: 20%;}
+  }
+  @media screen and (max-width:620px) {
+    .maindivforbuytoken{background-position-x: 70%;}
+  }
+
+  @media screen and (min-width:1007px) {
+    .maindivforgovernance{background-size: 100%;}
+  }
+  @media screen and (max-width:620px) {
+    .maindivforgovernance{background-position-x: 70%; background-position-y: 10%;}
+  }
+  @media screen and (max-width:1007px) {
+    .maindivforgovernance{background-position-x: 70%; background-position-y: 10%;}
+  }
+ 
+  @media screen and (min-width:1007px) {
+    .maindivforclimatedata{background-size: 100%;}
+  }
+  @media screen and (max-width:620px) {
+    .maindivforclimatedata{background-position-y: 60%; background-position-x: 20%;}
+  }
+  @media screen and (max-width:1007px) {
+    .maindivforclimatedata{background-position-y: 60%; background-position-x: 20%;}
+  }
+ 
+  .secondsectionbutton{transition: 0.5s ease-in-out;}
+  .secondsectionbutton:hover{transform: scale3d(0.95, 0.95, 0.95); background-color: #060;}
+
+  .footer{background-image: linear-gradient(45deg, #000, #020, #002, #000);}
+
+  @media screen and (min-width:1007px) {
+    .maindivforadminsignin{background-size: 100%;}
+  }
+  @media screen and (max-width:620px) {
+    .maindivforadminsignin{background-position-x: 50%;}
+  }
+  @media screen and (max-width:1007px) {
+    .maindivforadminsignin{background-position-x: 50%;}
+  }
+
+  .signinbutton{transition: 0.3s ease-in-out;}
+  .signinbutton:hover{background-color: #060;}
+
   
- 
- 
+  @media screen and (min-width:1007px) {
+    .maindivforadminpanel{background-size: 100%;}
+  }
+  @media screen and (max-width:620px) {
+    .maindivforadminpanel{background-position-x: 50%;}
+  }
+  @media screen and (max-width:1007px) {
+    .maindivforadminpanel{background-position-x: 50%;}
+  }
+
+  .deletepostbutton{transition: 0.3s ease-in-out;}
+  .deletepostbutton:hover{background-color: #a00;}
+  
+  @media screen and (min-width:1007px) {
+    .maindivforblog{background-size: 100%;}
+  }
+  @media screen and (max-width:620px) {
+    .maindivforblog{background-position-x: 50%;}
+  }
+  @media screen and (max-width:1007px) {
+    .maindivforblog{background-position-x: 50%;}
+  }

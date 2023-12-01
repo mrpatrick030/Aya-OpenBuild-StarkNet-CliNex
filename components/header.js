@@ -47,25 +47,31 @@ export default function ProjectHeader(){
         style={{fontSize:"110%", transition:"2s ease-in-out"}}>
            
             <span style={{transition:"1s ease-in-out"}} className="rounded-md">
-            <Link href='/' onClick={handleClick} className='lg:inline-flex lg:w-auto w-full px-4 rounded-full text-[#eee] items-center justify-center headeranchors'>
+            <Link href='/minttoken' onClick={handleClick} className='lg:inline-flex lg:w-auto w-full px-4 rounded-full text-[#eee] items-center justify-center headeranchors'>
                <span className="headeranchorsinnerspan">Become a Member</span>
             </Link>
           </span>
 
           <span style={{transition:"1s ease-in-out"}} className="rounded-md">
-            <Link href='/signin' onClick={handleClick} className='lg:inline-flex lg:w-auto w-full px-4 rounded-full text-[#eee] items-center justify-center headeranchors'>
+            <Link href='/governance' onClick={handleClick} className='lg:inline-flex lg:w-auto w-full px-4 rounded-full text-[#eee] items-center justify-center headeranchors'>
               <span className="headeranchorsinnerspan">Governance</span>
             </Link>
             </span>
 
             <span style={{transition:"1s ease-in-out"}} className="rounded-md">
-            <Link href='/signup' onClick={handleClick} className='lg:inline-flex lg:w-auto w-full px-4 rounded-full text-[#eee] items-center justify-center headeranchors'>
+            <Link href='/climatedata' onClick={handleClick} className='lg:inline-flex lg:w-auto w-full px-4 rounded-full text-[#eee] items-center justify-center headeranchors'>
               <span className="headeranchorsinnerspan">Climate Data</span>
             </Link>
             </span>
 
             <span style={{transition:"1s ease-in-out"}} className="rounded-md">
-            <Link href='/signup' onClick={handleClick} className='lg:inline-flex lg:w-auto w-full px-4 rounded-full text-[#eee] items-center justify-center headeranchors'>
+            <Link href='/blog' onClick={handleClick} className='lg:inline-flex lg:w-auto w-full px-4 rounded-full text-[#eee] items-center justify-center headeranchors'>
+              <span className="headeranchorsinnerspan">Blog</span>
+            </Link>
+            </span>
+
+            <span style={{transition:"1s ease-in-out"}} className="rounded-md">
+            <Link href='/adminsignin' onClick={handleClick} className='lg:inline-flex lg:w-auto w-full px-4 rounded-full text-[#eee] items-center justify-center headeranchors'>
               <span className="headeranchorsinnerspan">Admin Area</span>
             </Link>
             </span>
