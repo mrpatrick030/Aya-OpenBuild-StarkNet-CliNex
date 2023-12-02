@@ -747,8 +747,8 @@ export default function Governance(){
                     {viewDAOproposals.map((eachProposal) => (
                         <div className='mb-[1cm] p-[0.5cm] bg-[rgba(0,60,0,1)]' key={eachProposal.proposal_id}>
                         <div className='overflow-auto'><span className='font-[600]'>Proposal ID: </span>{eachProposal.proposal_id.toString()}</div>
-                        <div className='overflow-auto'><span className='font-[600]'>Proposal name: </span>{eachProposal.name.toString()}</div>
-                        <div className='overflow-auto'><span className='font-[600]'>Proposal description: </span>{eachProposal.description.toString().toString()}</div>
+                        <div className='overflow-auto'><span className='font-[600]'>Proposal name: </span>{Buffer.from(eachProposal.name.toString(16), 'hex').toString('utf-8')}</div>
+                        <div className='overflow-auto'><span className='font-[600]'>Proposal description: </span>{Buffer.from(eachProposal.description.toString(16), 'hex').toString('utf-8')}</div>
                         <div className='overflow-auto'><span className='font-[600]'>Proposal deadline: </span>{eachProposal.deadline.toString()}</div>
                         <div className='overflow-auto'><span className='font-[600]'>Proposal proposer: </span>{"0x" + eachProposal.proposer.toString(16)}</div>
                        </div>
