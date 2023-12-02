@@ -808,7 +808,7 @@ export default function Governance(){
                     </div>
                     <div className='mt-[0.5cm]'>
                       {NumberOfVotesValue ? (<span><span>Number of votes: </span><span className='font-[600] text-[#090]'>{NumberOfVotesValue}</span></span> ) : (<div></div>)}</div>
-                    <button onClick={(e) => {e.preventDefault(); readToViewNumberOfVotesOnAProposal(proposalid2)}}  className='p-[0.2cm] w-[100%] text-center font-[600] lg:text-[120%] md:text-[120%] mt-[7%] bg-[#222] rounded-md'>Vote Proposal</button>
+                    <button onClick={(e) => {e.preventDefault(); readToViewNumberOfVotesOnAProposal(proposalid2)}}  className='p-[0.2cm] w-[100%] text-center font-[600] lg:text-[120%] md:text-[120%] mt-[7%] bg-[#222] rounded-md'>View Votes</button>
                 </form>
             </div>
             }
