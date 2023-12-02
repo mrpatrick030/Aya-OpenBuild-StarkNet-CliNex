@@ -683,13 +683,13 @@ export default function Governance(){
 
         <div className='lg:mt-[0.5cm] md:mt-[0.5cm] mt-[1cm] p-[0.5cm] lg:bg-[rgba(0,0,0,0)] md:bg-[rgba(0,0,0,0)] bg-[rgba(0,0,0,0.5)] text-center rounded-xl' style={{display:"block", transition:"0.5s ease-in-out"}}>
             <img src="images/thelogo.png" width="150" style={{display:"inline-block"}} />
-            <Link href="#joinDAO"><button className='px-[1cm] py-[0.2cm] bg-[#000] rounded-full font-[500] mb-[0.3cm] lg:ml-[0.5cm] md:ml-[0.5cm] ml-[0.1cm] governancemenubuttons' style={{borderBottom:`2px solid ${joinDaoColor}`, color:joinDaoColor}} onClick={(e) => changeDisplay("joindaodisplay") & changeJoinColor()}>Join DAO</button></Link>
-            <Link href="#viewProposals"><button className='px-[1cm] py-[0.2cm] bg-[#000] rounded-full font-[500] mb-[0.3cm] lg:ml-[0.5cm] md:ml-[0.5cm] ml-[0.1cm] governancemenubuttons' style={{borderBottom:`2px solid ${viewProposalsColor}`, color:viewProposalsColor}} onClick={(e) => changeDisplay("viewproposalsdisplay") & changeViewColor()}>View Proposals</button></Link>
-            <Link href="#createProposals"><button className='px-[1cm] py-[0.2cm] bg-[#000] rounded-full font-[500] mb-[0.3cm] lg:ml-[0.5cm] md:ml-[0.5cm] ml-[0.1cm] governancemenubuttons' style={{borderBottom:`2px solid ${createProposalsColor}`, color:createProposalsColor}} onClick={(e) => changeDisplay("createproposaldisplay") & changeCreateColor()}>Create a Proposal</button></Link>
-            <Link href="#voteProposals"><button className='px-[1cm] py-[0.2cm] bg-[#000] rounded-full font-[500] mb-[0.3cm] lg:ml-[0.5cm] md:ml-[0.5cm] ml-[0.1cm] governancemenubuttons' style={{borderBottom:`2px solid ${voteProposalsColor}`, color:voteProposalsColor}} onClick={(e) => changeDisplay("voteproposaldisplay") & changeVoteColor()}>Vote for a Proposal</button></Link>
+            <button className='px-[1cm] py-[0.2cm] bg-[#000] rounded-full font-[500] mb-[0.3cm] lg:ml-[0.5cm] md:ml-[0.5cm] ml-[0.1cm] governancemenubuttons' style={{borderBottom:`2px solid ${joinDaoColor}`, color:joinDaoColor}} onClick={(e) => changeDisplay("joindaodisplay") & changeJoinColor()}>Join DAO</button>
+            <button className='px-[1cm] py-[0.2cm] bg-[#000] rounded-full font-[500] mb-[0.3cm] lg:ml-[0.5cm] md:ml-[0.5cm] ml-[0.1cm] governancemenubuttons' style={{borderBottom:`2px solid ${viewProposalsColor}`, color:viewProposalsColor}} onClick={(e) => changeDisplay("viewproposalsdisplay") & changeViewColor()}>View Proposals</button>
+            <button className='px-[1cm] py-[0.2cm] bg-[#000] rounded-full font-[500] mb-[0.3cm] lg:ml-[0.5cm] md:ml-[0.5cm] ml-[0.1cm] governancemenubuttons' style={{borderBottom:`2px solid ${createProposalsColor}`, color:createProposalsColor}} onClick={(e) => changeDisplay("createproposaldisplay") & changeCreateColor()}>Create a Proposal</button>
+            <button className='px-[1cm] py-[0.2cm] bg-[#000] rounded-full font-[500] mb-[0.3cm] lg:ml-[0.5cm] md:ml-[0.5cm] ml-[0.1cm] governancemenubuttons' style={{borderBottom:`2px solid ${voteProposalsColor}`, color:voteProposalsColor}} onClick={(e) => changeDisplay("voteproposaldisplay") & changeVoteColor()}>Vote for a Proposal</button>
         </div>
 
-        <div className='mt-[1cm] lg:mx-[20%] md:mx-[10%] p-[5%] bg-[rgba(0,0,0,0.96)] rounded-xl' id="joinDAO" style={{transition:"0.5s ease-in-out"}}>
+        <div className='mt-[1cm] lg:mx-[20%] md:mx-[10%] p-[5%] bg-[rgba(0,0,0,0.96)] rounded-xl' style={{transition:"0.5s ease-in-out"}}>
             {displayComponent === "joindaodisplay" && 
             <div data-aos="zoom-in" style={{transition:"0.5s ease-in-out"}}>
                 <div className='text-center lg:text-[150%] md:text-[150%] text-[120%] font-[600]'>Become a Member</div>
@@ -709,7 +709,7 @@ export default function Governance(){
             }
 
            {displayComponent === "viewproposalsdisplay" && 
-            <div data-aos="zoom-in" id="viewProposals" style={{transition:"0.5s ease-in-out"}}>
+            <div data-aos="zoom-in" style={{transition:"0.5s ease-in-out"}}>
                <div className='p-[5%]' style={{border:"1px solid #eee", transition:"0.3s ease-in-out"}}>
                 {viewDAOproposals ? (
                 <div>
@@ -731,7 +731,7 @@ export default function Governance(){
             }
 
          {displayComponent === "createproposaldisplay" && 
-            <div data-aos="zoom-in" id="createProposals" style={{transition:"0.5s ease-in-out"}}>
+            <div data-aos="zoom-in" style={{transition:"0.5s ease-in-out"}}>
                 <div className='text-center lg:text-[150%] md:text-[150%] text-[120%] font-[600]'>Create a Proposal</div>
                 <div className='mt-[0.5cm] text-center text-[#083] font-[500]'>Members of the DAO are allowed to create proposals!</div>
                 <form>
@@ -753,7 +753,7 @@ export default function Governance(){
             }
 
          {displayComponent === "voteproposaldisplay" && 
-            <div data-aos="zoom-in" id="voteProposals" style={{transition:"0.5s ease-in-out"}}>
+            <div data-aos="zoom-in" style={{transition:"0.5s ease-in-out"}}>
                 <div className='text-center lg:text-[150%] md:text-[150%] text-[120%] font-[600]'>Vote for a Proposal</div>
                 <div className='mt-[0.5cm] text-center text-[#083] font-[500]'>Give ID of proposal to vote!</div>
                 <form>
