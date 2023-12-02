@@ -604,11 +604,14 @@ export default function Governance(){
 
     //to view all proposals from DAO
     const [viewDAOproposals, setviewDAOproposals] = useState([])
+    const [numberofvotesforallids, setnumberofvotesforallids] = useState()
     const readDAOproposals = async () => {
         try {
         const starknet = await connect();
          const proposals = await DAOcontractReadSettings.view_proposals();
          setviewDAOproposals(proposals)
+         for(i=0; i > 0; i++) {const getNumberOfVotesForEachID = await DAOcontractReadSettings.view_votes(i)}
+         setnumberofvotesforallids(getNumberOfVotesForEachID)
          return;
        } catch (error) {
          console.log(error)
