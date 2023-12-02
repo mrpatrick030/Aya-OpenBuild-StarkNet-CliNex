@@ -734,7 +734,7 @@ export default function Governance(){
                     <label className='py-[0.2cm] px-[0.3cm] bg-[#222] rounded-md font-[500]'>$CLINEX Balance</label>
                     <div className='mt-[0.5cm]'><input type="text" className='py-[0.2cm] bg-[rgba(0,0,0,0)] outline-none w-[100%] placeholder-[#ddd]' value={clinexBalance} onChange={(e) => setPostedWalletAddress(e.target.value)} /></div>
                     </div>
-                    <button onClick={(e) => {e.preventDefault(); writeToJoinDao(postedWalletAddress,clinexBalance)}} className='p-[0.2cm] w-[100%] text-center font-[600] lg:text-[120%] md:text-[120%] mt-[7%] bg-[#222] rounded-md'>Join DAO</button>
+                    <button onClick={(e) => {e.preventDefault(); writeToJoinDao(postedWalletAddress,clinexBalance)}} className='actionbutton p-[0.2cm] w-[100%] text-center font-[600] lg:text-[120%] md:text-[120%] mt-[7%] bg-[#222] rounded-md'>Join DAO</button>
                 </form>
             </div>
             }
@@ -778,7 +778,7 @@ export default function Governance(){
                     <label className='py-[0.2cm] px-[0.3cm] bg-[#222] rounded-md font-[500]'>Proposal Deadline</label>
                     <div className='mt-[0.5cm]'><input type="text" className='py-[0.2cm] bg-[rgba(0,0,0,0)] outline-none w-[100%] placeholder-[#ddd]' required placeholder='Please fix a deadline for your proposal' id="proposaldeadline" name="proposaldeadline" onChange={(e) => setproposaldeadline(e.target.value)} /></div>
                     </div>
-                    <button onClick={(e) => {e.preventDefault(); writeToCreateProposal(proposaltitle, proposaldescription, proposaldeadline)}} className='p-[0.2cm] w-[100%] text-center font-[600] lg:text-[120%] md:text-[120%] mt-[7%] bg-[#222] rounded-md'>Create Proposal</button>
+                    <button onClick={(e) => {e.preventDefault(); writeToCreateProposal(proposaltitle, proposaldescription, proposaldeadline)}} className='actionbutton p-[0.2cm] w-[100%] text-center font-[600] lg:text-[120%] md:text-[120%] mt-[7%] bg-[#222] rounded-md'>Create Proposal</button>
                 </form>
             </div>
             }
@@ -792,7 +792,7 @@ export default function Governance(){
                     <label className='py-[0.2cm] px-[0.3cm] bg-[#222] rounded-md font-[500]'>Proposal ID</label>
                     <div className='mt-[0.5cm]'><input type="text" className='py-[0.2cm] bg-[rgba(0,0,0,0)] outline-none w-[100%] placeholder-[#ddd]' placeholder='Type the ID of this proposal' id="proposalid" name="proposalid" onChange={(e) => setproposalid(e.target.value)} /></div>
                     </div>
-                    <button onClick={(e) => {e.preventDefault(); writeToVoteProposal(proposalid)}}  className='p-[0.2cm] w-[100%] text-center font-[600] lg:text-[120%] md:text-[120%] mt-[7%] bg-[#222] rounded-md'>Vote Proposal</button>
+                    <button onClick={(e) => {e.preventDefault(); writeToVoteProposal(proposalid)}}  className='actionbutton p-[0.2cm] w-[100%] text-center font-[600] lg:text-[120%] md:text-[120%] mt-[7%] bg-[#222] rounded-md'>Vote Proposal</button>
                 </form>
             </div>
             }
@@ -808,7 +808,7 @@ export default function Governance(){
                     </div>
                     <div className='mt-[0.5cm]'>
                       {NumberOfVotesValue ? (<span><span>Number of votes: </span><span className='font-[600] text-[#090]'>{NumberOfVotesValue}</span></span> ) : (<div></div>)}</div>
-                    <button onClick={(e) => {e.preventDefault(); readToViewNumberOfVotesOnAProposal(proposalid2)}}  className='p-[0.2cm] w-[100%] text-center font-[600] lg:text-[120%] md:text-[120%] mt-[7%] bg-[#222] rounded-md'>View Votes</button>
+                    <button onClick={(e) => {e.preventDefault(); readToViewNumberOfVotesOnAProposal(proposalid2)}}  className='actionbutton p-[0.2cm] w-[100%] text-center font-[600] lg:text-[120%] md:text-[120%] mt-[7%] bg-[#222] rounded-md'>View Votes</button>
                 </form>
             </div>
             }
