@@ -17,12 +17,14 @@ export default function Governance(){
     const [viewProposalsColor, setViewProposalsColor] = useState("#fff")
     const [createProposalsColor, setCreateProposalsColor] = useState("#fff")
     const [voteProposalsColor, setVoteProposalsColor] = useState("#fff")
+    const [numberOfvotesColor, setnumberOfvotesColor] = useState("#fff")
 
     const changeJoinColor = () => {
         setJoinDaoColor("#073")
         setViewProposalsColor("#fff")
         setCreateProposalsColor("#fff")
         setVoteProposalsColor("#fff")
+        setnumberOfvotesColor("#fff")
     }
 
     const changeViewColor = () => {
@@ -30,6 +32,7 @@ export default function Governance(){
         setViewProposalsColor("#073")
         setCreateProposalsColor("#fff")
         setVoteProposalsColor("#fff")
+        setnumberOfvotesColor("#fff")
     }
 
     const changeCreateColor = () => {
@@ -37,6 +40,7 @@ export default function Governance(){
         setViewProposalsColor("#fff")
         setCreateProposalsColor("#073")
         setVoteProposalsColor("#fff")
+        setnumberOfvotesColor("#fff")
     }
 
     const changeVoteColor = () => {
@@ -44,7 +48,17 @@ export default function Governance(){
         setViewProposalsColor("#fff")
         setCreateProposalsColor("#fff")
         setVoteProposalsColor("#073")
+        setnumberOfvotesColor("#fff")
     }
+
+    const changeNumberOfVotesColor = () => {
+        setJoinDaoColor("#fff")
+        setViewProposalsColor("#fff")
+        setCreateProposalsColor("#fff")
+        setVoteProposalsColor("#fff")
+        setnumberOfvotesColor("#073")
+    }
+
 
     
 
@@ -609,7 +623,6 @@ export default function Governance(){
         const starknet = await connect();
          const proposals = await DAOcontractReadSettings.view_proposals();
          setviewDAOproposals(proposals)
-         return;
        } catch (error) {
          console.log(error)
        }
@@ -661,6 +674,23 @@ export default function Governance(){
         } 
         
 
+
+           //to read DAO contract to get number of votes for a proposal
+    const [proposalid2, setproposalid2] = useState()
+    const [NumberOfVotesValue, setNumberOfVotesValue] = useState()
+    const readToViewNumberOfVotesOnAProposal = async() => {
+        try {
+            const starknet = await connect();
+             setConnectedWallet(true);
+             setConnectWallet(false);
+            const numberOfVotesFromExplorer = await DAOcontractReadSettings.view_votes(proposalid2);
+            const numberOfVotesFromExplorerConvert = numberOfVotesFromExplorer.toString();
+            setNumberOfVotesValue(numberOfVotesFromExplorerConvert);
+        } catch (error) {
+          console.log(error)  
+        }
+    }
+
   useEffect(() => {
     AOS.init();
   }, [])
@@ -687,6 +717,7 @@ export default function Governance(){
             <button className='px-[1cm] py-[0.2cm] bg-[#000] rounded-full font-[500] mb-[0.3cm] lg:ml-[0.5cm] md:ml-[0.5cm] ml-[0.1cm] governancemenubuttons' style={{borderBottom:`2px solid ${viewProposalsColor}`, color:viewProposalsColor}} onClick={(e) => changeDisplay("viewproposalsdisplay") & changeViewColor()}>View Proposals</button>
             <button className='px-[1cm] py-[0.2cm] bg-[#000] rounded-full font-[500] mb-[0.3cm] lg:ml-[0.5cm] md:ml-[0.5cm] ml-[0.1cm] governancemenubuttons' style={{borderBottom:`2px solid ${createProposalsColor}`, color:createProposalsColor}} onClick={(e) => changeDisplay("createproposaldisplay") & changeCreateColor()}>Create a Proposal</button>
             <button className='px-[1cm] py-[0.2cm] bg-[#000] rounded-full font-[500] mb-[0.3cm] lg:ml-[0.5cm] md:ml-[0.5cm] ml-[0.1cm] governancemenubuttons' style={{borderBottom:`2px solid ${voteProposalsColor}`, color:voteProposalsColor}} onClick={(e) => changeDisplay("voteproposaldisplay") & changeVoteColor()}>Vote for a Proposal</button>
+            <button className='px-[1cm] py-[0.2cm] bg-[#000] rounded-full font-[500] mb-[0.3cm] lg:ml-[0.5cm] md:ml-[0.5cm] ml-[0.1cm] governancemenubuttons' style={{borderBottom:`2px solid ${numberOfvotesColor}`, color:numberOfvotesColor}} onClick={(e) => changeDisplay("numberofvotesdisplay") & changeNumberOfVotesColor()}>View number of Votes</button>
         </div>
 
         <div className='mt-[1cm] lg:mx-[20%] md:mx-[10%] p-[5%] bg-[rgba(0,0,0,0.96)] rounded-xl' style={{transition:"0.5s ease-in-out"}}>
@@ -717,7 +748,7 @@ export default function Governance(){
                         <div className='mb-[1cm] p-[0.5cm] bg-[rgba(0,60,0,1)]' key={eachProposal.proposal_id}>
                         <div className='overflow-auto'><span className='font-[600]'>Proposal ID: </span>{eachProposal.proposal_id.toString()}</div>
                         <div className='overflow-auto'><span className='font-[600]'>Proposal name: </span>{eachProposal.name.toString()}</div>
-                        <div className='overflow-auto'><span className='font-[600]'>Proposal description: </span>{eachProposal.description.toString()}</div>
+                        <div className='overflow-auto'><span className='font-[600]'>Proposal description: </span>{eachProposal.description.toString().toString()}</div>
                         <div className='overflow-auto'><span className='font-[600]'>Proposal deadline: </span>{eachProposal.deadline.toString()}</div>
                         <div className='overflow-auto'><span className='font-[600]'>Proposal proposer: </span>{"0x" + eachProposal.proposer.toString(16)}</div>
                        </div>
@@ -762,6 +793,22 @@ export default function Governance(){
                     <div className='mt-[0.5cm]'><input type="text" className='py-[0.2cm] bg-[rgba(0,0,0,0)] outline-none w-[100%] placeholder-[#ddd]' placeholder='Type the ID of this proposal' id="proposalid" name="proposalid" onChange={(e) => setproposalid(e.target.value)} /></div>
                     </div>
                     <button onClick={(e) => {e.preventDefault(); writeToVoteProposal(proposalid)}}  className='p-[0.2cm] w-[100%] text-center font-[600] lg:text-[120%] md:text-[120%] mt-[7%] bg-[#222] rounded-md'>Vote Proposal</button>
+                </form>
+            </div>
+            }
+
+             {displayComponent === "numberofvotesdisplay" && 
+            <div data-aos="zoom-in" style={{transition:"0.5s ease-in-out"}}>
+                <div className='text-center lg:text-[150%] md:text-[150%] text-[120%] font-[600]'>View the number of Votes for a Proposal</div>
+                <div className='mt-[0.5cm] text-center text-[#083] font-[500]'>Give ID of proposal to view its votes!</div>
+                <form>
+                    <div className='mt-[7%]' style={{borderBottom:"2px solid #fff"}}>
+                    <label className='py-[0.2cm] px-[0.3cm] bg-[#222] rounded-md font-[500]'>Proposal ID</label>
+                    <div className='mt-[0.5cm]'><input type="text" className='py-[0.2cm] bg-[rgba(0,0,0,0)] outline-none w-[100%] placeholder-[#ddd]' placeholder='Type the ID of this proposal' id="proposalid2" name="proposalid2" onChange={(e) => setproposalid2(e.target.value)} /></div>
+                    </div>
+                    <div className='mt-[0.5cm]'>
+                      {NumberOfVotesValue ? (<span><span>Number of votes: </span><span className='font-[600] text-[#090]'>{NumberOfVotesValue}</span></span> ) : (<div></div>)}</div>
+                    <button onClick={(e) => {e.preventDefault(); readToViewNumberOfVotesOnAProposal(proposalid2)}}  className='p-[0.2cm] w-[100%] text-center font-[600] lg:text-[120%] md:text-[120%] mt-[7%] bg-[#222] rounded-md'>Vote Proposal</button>
                 </form>
             </div>
             }
