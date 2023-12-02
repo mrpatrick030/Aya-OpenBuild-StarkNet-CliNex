@@ -710,7 +710,7 @@ export default function Governance(){
 
            {displayComponent === "viewproposalsdisplay" && 
             <div data-aos="zoom-in" style={{transition:"0.5s ease-in-out"}}>
-               <div className='p-[5%]' style={{border:"1px solid #eee", transition:"0.3s ease-in-out"}}>
+               <div className='p-[5%]' style={{border:"1px solid #eee", transition:"0.3s ease-in-out", overflow:"scroll", maxHeight:"20cm"}}>
                 {viewDAOproposals ? (
                 <div>
                     {viewDAOproposals.map((eachProposal) => (
