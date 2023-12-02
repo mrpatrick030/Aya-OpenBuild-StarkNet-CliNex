@@ -26,7 +26,7 @@ export default function GetToken() {
          setuserswalletaddress(walletAddress)
       
       } catch (error) {
-        console.error('Error connecting to StarkNet:', error.message);
+        console.log('Error connecting to StarkNet:', error.message);
       }
     };
 

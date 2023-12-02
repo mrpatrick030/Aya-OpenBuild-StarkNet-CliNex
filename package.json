@@ -13,6 +13,7 @@
     "@rainbow-me/rainbowkit": "^1.0.11",
     "@starknet-react/chains": "^0.1.0",
     "@starknet-react/core": "^2.1.1",
+    "@types/moment": "^2.13.0",
     "@vercel/postgres": "^0.5.1",
     "aos": "^2.3.4",
     "autoprefixer": "10.4.16",
